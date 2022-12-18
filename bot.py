@@ -31,6 +31,12 @@ async def cross(ctx):
 async def chat(ctx):
     await ctx.send("Hey, I'm on the chat.")
 
+@client.command()
+async def ping(ctx):
+     await ctx.send(f'Pong! In {round(client.latency * 1000)}ms')
+
+
+
 @client.event
 async def on_member_join(member):
     await member.send('Hello, welcome to our test server.')
