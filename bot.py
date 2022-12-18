@@ -31,13 +31,14 @@ async def cross(ctx):
 async def chat(ctx):
     await ctx.send("Hey, I'm on the chat.")
 
+@client.event
+async def on_member_join(member):
+    await member.send('Hello, welcome to our test server.')
+
 #creating commands (you can clone this command afterwards)
 TOKEN = os.getenv('TOKEN')
 client.run(TOKEN)
 
-@client.event
-async def on_member_join(member):
-    await member.send('Hello, welcome to our test server.')
 
     # I'm working on this still.
 
